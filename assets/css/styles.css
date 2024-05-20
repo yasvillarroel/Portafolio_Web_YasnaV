@@ -1,0 +1,419 @@
+/*Importamos el archivo de las fuentes CSS para poder utilizarlas en nuestro proyecto solo con la propiedad font-family: ...*/
+@import url('fonts.css');
+
+
+:root{
+  --color1: rgba(248, 249, 250);
+  --color2: #b03648;
+  --color3: black;
+  --color4: #fff;
+  --color5: #666777;
+  --color6: #C8676D;
+  --color7: #EBEBEB;
+  --color8: rgba(0, 0, 0, .5);
+  --color9: rgba(0, 0, 0, 0, 4);
+  --color10: grey;
+  --color11: #E9E9E9;
+  --color12: #314652;
+  --color13: #f1f1f1;
+}
+/*----------------------------------General----------------------------------*/
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 50px 0;
+  position: relative;
+}
+
+.bg-light {
+  background-color: var(--color1) !important;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.container {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.titulo {
+  font-weight: bold;
+  color: var(--color2);
+  font-size: 30px;
+}
+
+.subtitulo {
+  color: var(--color2);
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+p {
+  font-size: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.btn {
+  background-color: var(--color3) ;
+  color:var(--color4);
+  padding: 20px;
+  align-items: center;
+  border-radius: 50px;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: var(--color2);
+  color:var(--color4) ;
+  transition: all .5s ease;
+  border-radius: 50px;
+  padding: 20px;
+  align-items: center;
+}
+
+.logo {
+  inline-size: 140px;
+  padding-right: 35px;
+}
+
+/* -------------------------------------- Navbar --------------------------------------*/
+.navbar {
+  width: 100%;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+  background-color: transparent;
+  font-size: 18px;
+}
+
+.sticky {
+  background-color: var(--color4) !important;
+}
+
+/* centrar el navbar */
+.custom-nav .navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-nav .container-fluid {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.custom-nav .navbar-collapse {
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-nav .logo {
+  position: relative;
+  left: 10%;
+}
+
+.custom-nav .navbar-nav .nav-item {
+  margin: 0 25px;
+}
+
+/* efectos en los nav.link */
+.nav-link {
+  color: var(--color5);
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color3);
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--color6);
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+  visibility: visible;
+}
+
+/* --------------------------------------Bienvenida-------------------------------------- */
+
+.bienvenida {
+  overflow: hidden;
+}
+
+.bienvenida .div-foto {
+  background: url(../img/fondo.jpg);
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 70vh;
+  width: 100%;
+}
+
+.bienvenida .contenedor {
+  max-width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.bienvenida .text {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* textos con movimiento */
+.contenedor .text {
+  position: relative;
+  text-align: center;
+  text-align: center;
+  color: var(--color3);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.contenedor .text.first-text {
+  color: var(--color3);
+}
+
+.text.sec-text:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color7);
+  border-left: 2px solid var(--color3);
+  animation: animate 4s steps(8) infinite;
+
+}
+
+@keyframes animate {
+
+  40%,
+  60% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+.contenedor-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+/* --------------------------------------Sobre Mi-------------------------------------- */
+.yo_imagen {
+  inline-size: 70vh;
+}
+
+
+/* --------------------------------------Portafolio-------------------------------------- */
+.card-text {
+  color: var(--color3);
+}
+
+.card {
+  box-shadow: 2px 2px 5px var(--color8);
+  transition: all .4s ease-in-out;
+  display: flex;
+}
+
+.card:hover {
+  box-shadow: 5px 5px 20px var(--color9);
+  transform: translateY(-3%);
+}
+
+/* --------------------------------------Lenguajes-------------------------------------- */
+.foto {
+  width: 100px;
+  border-radius: 8px;
+  align-items: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.nombres {
+  font-weight: bold;
+}
+
+.p-5 {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.col.lenguaje:hover {
+  transform: scale(1.2);
+  transition: all .4s ease-in-out;
+}
+
+/* --------------------------------------Certificados-------------------------------------- */
+.diploma:hover {
+  transform: scale(1.2);
+}
+
+/* --------------------------------------Formulario de Contacto-------------------------------------- */
+.container-form h2 {
+  margin-bottom: 15px;
+  font-size: 35px
+}
+
+.container-form a {
+  font-size: 17px;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 15px;
+  color: var(--color3);
+  font-weight: 700;
+}
+
+.container-form a i {
+  color: var(--color3);
+  margin-right: 10px;
+}
+
+.container-form form .campo, textarea {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 16px;
+  border: 1px solid var(--color10);
+  margin-bottom: 20px;
+  border-radius: 3px;
+  outline: 0px;
+  margin-top: 20px;
+}
+
+.container-form form textarea {
+  width: 100%;
+  min-height: 140px;
+  max-height: 150px;
+}
+
+.container-form .btn-enviar {
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  outline: 0px;
+  background: var(--color3);
+  color: var(--color4);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  margin-top: 10px;
+}
+
+.container-form .btn-enviar:hover {
+  background: var(--color2);
+  color: var(--color4);
+}
+
+/* -------------------------------------Pie de página (FOOTER)------------------------------------- */
+.footer {
+  background-color: var(--color11);
+  margin-top: 30px;
+}
+
+/* Botones redes sociales */
+.rrss {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  min-width: 300px;
+}
+
+.rrss a {
+  text-decoration: none;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: var(--color12);
+  color: var(--color13);
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px var();
+  transition: all .4s ease-in-out;
+}
+
+.rrss a:hover {
+  transform: scale(1.2);
+}
+
+/* -------------------------------------- @media-------------------------------------- */
+@media (max-width: 576px) {
+  .bienvenida .titulo {
+    font-size: 28px;
+  }
+
+  .bienvenida h2 {
+    font-size: 20px;
+  }
+
+  .bienvenida .text {
+    font-size: 20px;
+  }
+}
+
+/* Ajustes adicionales para la navbar en dispositivos pequeños */
+@media (max-width: 576px) {
+  .navbar-nav .nav-item {
+    margin: 0 10px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 15px;
+  }
+
+  .logo img {
+    max-width: 150px;
+  }
+}

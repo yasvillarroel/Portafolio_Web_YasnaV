@@ -1,0 +1,223 @@
+@import url('fonts.css');
+
+:root{
+  --color1: rgba(248, 249, 250);
+  --color2: #b03648;
+  --color3: black;
+  --color4: #fff;
+  --color5: #666777;
+  --color6: #C8676D;
+  --color7: #EBEBEB;
+  --color8: rgba(0, 0, 0, .5);
+  --color9: rgba(0, 0, 0, 0, 4);
+  --color10: grey;
+  --color11: #E9E9E9;
+  --color12: #314652;
+  --color13: #f1f1f1;
+}
+
+/*----------------------------------General----------------------------------*/
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  height: auto;
+  align-items: center;
+}
+
+.subtitulo {
+  color: var(--color2);
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+p {
+  font-size: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.btn {
+  background-color: var(--color3);
+  color: var(--color4);
+  padding: 20px;
+  align-items: center;
+  border-radius: 50px;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: var(--color2);
+  color: var(--color4);
+  transition: all .5s ease;
+  border-radius: 50px;
+  padding: 20px;
+  align-items: center;
+}
+
+.logo {
+  inline-size: 140px;
+  padding-right: 35px;
+}
+
+/* -------------------------------------- Navbar --------------------------------------*/
+.navbar {
+  width: 100%;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+  background-color: transparent;
+  font-size: 18px;
+}
+
+.sticky {
+  background-color: var(--color4) !important;
+}
+
+/* centrar el navbar */
+.custom-nav .navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-nav .container-fluid {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.custom-nav .navbar-collapse {
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-nav .logo {
+  position: relative;
+  left: 10%;
+}
+
+.custom-nav .navbar-nav .nav-item {
+  margin: 0 25px;
+}
+
+/* efectos en los nav.link */
+.nav-link {
+  color: var(--color5);
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color3);
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--color6);
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+  visibility: visible;
+}
+
+/* --------------------------------------Encabezado-------------------------------------- */
+.bienvenida {
+  overflow: hidden;
+}
+
+.div-foto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 100%;
+  background: url(../img/fondo.jpg);
+  background-size: cover;
+  background-position: bottom;
+  padding: 20px;
+}
+
+/* --------------------------------------Descripción Proyecto-------------------------------------- */
+.caos {
+  width: 800px;
+  height: auto;
+}
+
+/* -------------------------------------Pie de página (FOOTER)------------------------------------- */
+.footer {
+  margin-top: 30px;
+  background-color: var(--color11);
+}
+
+/* Botones redes sociales */
+.rrss {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  min-width: 300px;
+}
+
+.rrss a {
+  text-decoration: none;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: var(--color12);
+  color: var(--color13);
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px var(--color8);
+  transition: all .4s ease-in-out;
+}
+
+.rrss a:hover {
+  transform: scale(1.2);
+}
+
+/* -------------------------------------- @media-------------------------------------- */
+@media (max-width: 576px) {
+  .navbar-nav .nav-item {
+    margin: 0 10px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 15px;
+  }
+
+  .logo img {
+    max-width: 150px;
+  }
+}
